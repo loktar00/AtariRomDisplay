@@ -1,0 +1,11 @@
+/* app css stylesheet */
+html{font-family: 'Roboto', sans-serif; color:#3e3e3e;}
+form{width:400px;}
+ul{list-style:none; margin:0; padding:0;}
+li{margin-top:10px;}
+label{font-weight:bold;}
+span{float:left; display: block;width: 50%;}
+li:after{content: "."; visibility: hidden; display: block; height: 0; clear: both;}
+
+/*color picker*/
+.polyp-but{border:3px solid #e0e0e0; width:20px; height:20px;cursor: pointer}

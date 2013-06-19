@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" data-ng-app="romApp">
+<head>
+  <meta charset="utf-8">
+  <title>Atari Rom Reader</title>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body>
+  <ul>
+    <li>
+        <img id="rom"/>
+    </li>
+  </ul>
+  <div data-ng-controller="romController">
+    <form name="romForm">
+      <ul>
+        <li>
+          <span>
+           <label>Rom</label>
+         </span>
+         <span>
+            <select data-ng-model="rom" ng-options="r.name for r in roms" required>
+              <option value="">-- chose rom --</option>
+            </select>
+          </span>
+        </li>
+        <li>
+          <span>
+            <label>Background Color</label>
+          </span>
+          <span>
+            <input type="color" data-ng-model="backgroundColor"/>
+          </span>
+        </li>
+        <li>
+          <span>
+            <label>Color 1</label>
+          </span>
+          <span>
+            <input type="color" data-ng-model="color1"/>
+          </span>
+        </li>
+        <li>
+          <span>
+            <label>Color 2</label>
+          </span>
+          <span> 
+            <input type="color" data-ng-model="color2"/>
+          <span>
+        </li>
+        <li>
+          <span>
+            <label>Color 3</label>
+          </span>
+          <span>
+            <input type="color" data-ng-model="color3"/>
+          </span>
+        </li>
+        <li>
+          <span>
+            <label>Pixel Size</label>
+          </span>
+          <span>
+            <select data-ng-model="size" ng-options="d for d in dim" ng-init="size=dim[0]">
+            </select>
+          </span>
+        </li>
+        <li>
+           <input type="button" value="Display" data-ng-click="process()" data-ng-disabled="romForm.$invalid"/>
+        </li>
+      </ul>
+    </form>
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/factories.js"></script>
+  <script src="js/controllers.js"></script>
+
+  <script src="js/libs/polypicker.js"></script>
+</body>
+</html>
